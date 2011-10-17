@@ -1,0 +1,25 @@
+- if @names.blank?
+  %h1 No Names Found
+- else
+  %h1 Found <span class="num_names">#{number_with_delimiter @names.length}</span> Names
+  .metadata
+    %span.finding_time= sprintf('%.2f seconds', finding_time)
+    - if params[:freetext]
+      %span.text&= '"' << awesome_truncate(params[:freetext], 80) << '"'
+    - elsif params[:file]
+      %span.file= params[:file][:filename]
+    - elsif !params[:url].blank?
+      %a.original_url{ :href => params[:url], :target => '_blank' }= awesome_truncate(params[:url], 80)
+    - elsif !params[:example_url].blank?
+      %a.original_url{ :href => params[:example_url], :target => '_blank' }= awesome_truncate(params[:example_url], 80)
+
+  %table#results{ :cellspacing => 0}
+    %thead
+      %tr
+        %th{ :scope => 'col' } Verbatim Name
+        %th{ :scope => 'col' } Scientific Name
+    %tbody
+      - @names.each do |name|
+        %tr
+          %td= name.verbatim
+          %td= name.scientific || '&mdash;&mdash;'

@@ -1,0 +1,43 @@
+%h1 NameFinding API Documentation
+
+%section
+  %h1 find
+  %p Returns the scientific names found in the document.
+  %h2 URL:
+  %code http://namefinding.ubio.org/find
+  %h2 HTTP Method:
+  %code GET
+  %h2 API rate:
+  %code to be decided
+  %h2 Paramters:
+  %dl
+    %dt input
+    %dd 
+      %p Required. The input must be URL encoded. It must either be free text or a URL that is to be followed and parsed.
+    
+    %dt type
+    %dd
+      %p Required. This is the input type.
+      %h3 Options:
+      %ul
+        %li text
+        %li url
+        
+    %dt format
+    %dd
+      %p Required. This is the format the data will be returned in.
+      %h3 Options:
+      %ul
+        %li xml
+        %li json
+        
+    %dt client
+    %dd
+      %p Required. This is the algorithm used to parse the input.
+      %h3 Options:
+      %ul
+        %li neti
+        %li taxonfinder
+        
+  %h2 Example:
+  %code http://namefinding.ubio.org/find?input=Mus+musculus+is+a+species+in+this+sentence&type=text&format=xml&client=neti

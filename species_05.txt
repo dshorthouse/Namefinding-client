@@ -1,0 +1,15 @@
+Name: Selenochlamys ysbryda
+
+Common Name: Ghost Slug
+
+Family: Trigonochlamydidae
+
+How it made the list: This charismatic, introduced species was a surprising find in such a well-collected and densely populated area.
+
+Reference: Rowson, B. & W.O.C. Symondson. 2008. Selenochlamys ysbryda sp. nov. from Wales, UK: A Testacella-like slug new to Western Europe (Stylommatophora: Trigonochlamydidae). Journal of Conchology 39(5):537-552.
+
+Type material: "Holotype (one adult, dissected): UK: Wales: Glamorgan: Cardiff: domestic garden in Canton (ST1676), 10-15m alt., leg. P. Thomas 28 Sep 2007, det. B. Rowson & W. O. C. Symondson (NMW.Z.2008.005.00001 80% ethanol). S. ysbryda sp. nov., Paratype 1 (one adult, dissected): UK: Wales: Glamorgan: Cardiff: domestic garden in Canton (ST1676), 10-15m alt., leg. B. Rowson 8 Oct 2007, det. B. Rowson & W. O. C. Symondson (NMW.Z.2008.005.00002 80% ethanol)." [For additional paratypes see Rowson & Symondson (2008)].
+
+Type locality: Cardiff, Glamorgan, Wales, UK.
+
+Etymology: "Specific epithet ysbryda, from Welsh “ysbryd,” a ghost or spirit, latinized by the addition of a feminine ending 'a' and to be treated as a noun in apposition. The name alludes to the species’ ghostly appearance, nocturnal, predatory behaviour and the element of mystery surrounding its origin."

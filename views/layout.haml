@@ -1,0 +1,55 @@
+!!! 5
+%html
+  %head
+    %meta{ 'http-equiv' => 'Content-Type', :content => "application/xhtml+xml; charset=utf-8" }
+    %title Name Finding Tools
+    %link{ :rel => 'stylesheet', :href=>"/stylesheets/reset.css", :type=>"text/css", :media => 'screen' }
+    %link{ :rel => 'stylesheet', :href=>"/stylesheets/typography.css", :type=>"text/css", :media => 'screen' }
+    %link{ :rel => 'stylesheet', :href=>"/stylesheets/jquery_tabs.css", :type=>"text/css", :media => 'screen' }
+    %link{ :rel => 'stylesheet', :href=>"/stylesheets/application.css", :type=>"text/css", :media => 'screen' }
+    %script{:src=>"/javascript/jquery-1.4.2.min.js", :type=>"text/javascript", :charset=>"utf-8"}
+    %script{:src=>"/javascript/jquery.cookie.min.js", :type=>"text/javascript", :charset=>"utf-8"}
+    %script{:src=>"/javascript/jquery-ui-1.8.4.custom.min.js", :type=>"text/javascript", :charset=>"utf-8"}
+    %script{:src=>"/javascript/email_form.js", :type=>"text/javascript", :charset=>"utf-8"}
+    
+    :javascript
+      $(document).ready(function(){
+        #{yield_content :domready}
+      });
+  %body
+    .wrapper    
+      %header
+        #header
+          .logo
+            %a{:href=>'/'} Scientific Names Tools
+      #content= yield
+      .push
+    
+    .footer
+      #footer_container
+        #api
+          %h2 REST API
+          %p All Name Finding Tools are exposed as a REST API. Please see the <a href="/api-docs">API Documentation</a> for more information and examples.
+        #contact
+          %h2 Contact
+          %p Comments and questions are always welcome, <a href="contact" id="contact_us">Contact Us</a>.
+        #brought_to_you_by
+          %p Brought to you by the <abbr title="Marine Biological Laboratory / Woods Hole Oceanographic Institution">MBLWHOI</abbr> Library with funding from the Ellison Medical Foundation, the George F. Jewett Foundation, the National Library of Medicine, and the National Institutes of Health.
+          %p
+            -image_link 'logo_mblwhoi.gif',  'http://www.mblwhoilibrary.org/', :alt =>'Logo of the MBL-WHOI Library'
+            -image_link 'logo_boa.gif',  'http://www.biologyofaging.org/', :alt =>'Logo of the Biology of Aging'
+            -image_link 'logo_nlm.gif',  'http://www.nlm.nih.gov/', :alt =>'Logo of the National Library of Medicine'
+            -image_link 'logo_nih.gif',  'http://www.nih.gov/',     :alt => 'Logo of the National Institutes of Health'
+            -image_link 'logo_ellison.gif','http://www.ellisonfoundation.org', :alt => 'Logo of the Ellison Medical Foundation'
+            -image_link 'logo_gbif.gif','http://www.gbif.org/', :alt => 'Logo of the Global Biodiversity Information Facility'
+            
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-19266980-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();

@@ -1,0 +1,80 @@
+%h1 Find Names
+
+%form{:id => "finder_form", :action => "/find", :method => "post", :enctype => "multipart/form-data"}
+  %input{ :type => 'hidden', :name => 'from_web_form', :value => 't' }
+  #input_formats
+    %ul
+      %li
+        %a{:href => '#freetext_fields'} Free Text
+      %li
+        %a{:href => '#url_fields'} URL
+      %li
+        %a{:href => '#file_fields'} File
+    %fieldset#freetext_fields
+      %legend Free Text
+      %ol
+        %li
+          %label{ :for => 'freetext' } Free Text
+          %textarea{ :name => "freetext", :id => 'freetext' }
+    %fieldset#url_fields
+      %legend URL
+      %ol
+        %li
+          %label{ :for => 'url' } URL
+          %input{ :type => "text", :name => "url", :id => 'url', :class => "text"}
+          .tip Note: PDF and Microsoft Word documents are not currently supported 
+        %li
+          %label{ :for => 'example_url' } Example URLs
+          %select{ :name => "example_url", :id => 'example_url' }
+            %option{:selected => true}
+            %option http://www.sciencedaily.com/news/plants_animals/new_species/
+            %option http://www.livescience.com/environment/top-10-new-species-1.html
+            %option http://www.sciencedaily.com/releases/2010/04/100407104032.htm
+            %option http://ia311319.us.archive.org/3/items/americanseashell00abbo/americanseashell00abbo_djvu.txt
+            %option http://ia341016.us.archive.org/3/items/britishinsectsge00westuoft/britishinsectsge00westuoft_djvu.txt
+            %option http://ia340912.us.archive.org/3/items/handbookofzoolog01hoevrich/handbookofzoolog01hoevrich_djvu.txt
+            %option http://species.asu.edu/2009_species05
+            %option http://species.asu.edu/2009_species10
+            %option http://species.asu.edu/2009_species09
+            %option http://species.asu.edu/2009_species08
+            %option http://species.asu.edu/2009_species06
+            %option http://species.asu.edu/2009_species05
+            %option http://species.asu.edu/2010_species05
+            %option http://species.asu.edu/2010_species09
+            %option http://species.asu.edu/2010_species10
+    %fieldset#file_fields
+      %legend File
+      %ol
+        %li
+          %label{ :for => 'file' } Upload File
+          %input{ :type => "file", :name => "file", :id => 'file', :class => "file"}
+          .tip Note: PDF and Microsoft Word documents are not currently supported
+  %fieldset#algorithm_fields
+    %ol
+      %li
+        %span.label Algorithm
+        %ul.radio_group
+          %li
+            %label
+              %input{ :type => "radio", :name => "client", :class => "radio", :value => 'neti', :checked => true}
+              NetiNeti (beta)
+          %li
+            %label
+              %input{ :type => "radio", :name => "client", :class => "radio", :value => 'taxonfinder'}
+              TaxonFinder
+    .hint
+      %h2 Which Algorithm to Choose?
+      %p#neti_hint <em>NetiNeti</em> is a system that applies probabilistic machine learning methods for name identification and discovery. It can find new names and handle misspellings, OCR errors and other spelling variations.
+      %p#taxonfinder_hint <em>TaxonFinder</em> uses a dictionary to identify taxon names. It is accurate with known names, but can't detect new names or misspellings.
+  %fieldset.buttons
+    .button_with_spinner
+      .button
+        %input{ :type => "submit", :name => "submit", :id => 'submit', :class => "submit", :value => 'Find Names'}
+      .spinner
+        .finding Finding&hellip;
+=#%a{:onclick => "$('.buttons .button_with_spinner').toggleClass('loading');"} Toggle Loading
+
+-content_for :domready do
+  = "$('#input_formats').tabs({cookie: {expires:1}, show:function(event, ui){ $(ui.panel).siblings().find(':input').attr('disabled', true); $(ui.panel).find(':input').removeAttr('disabled'); }});"
+  = "$('#finder_form').submit(function(){$('.buttons .button_with_spinner').addClass('loading');});"
+  = "$('#' + $('input[type=radio]:checked', '.radio_group').val() + '_hint').show();$('input[type=radio]').change(function(){$('.hint p').toggle();});"

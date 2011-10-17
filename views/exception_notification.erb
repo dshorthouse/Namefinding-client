@@ -1,0 +1,13 @@
+A <%= error.class %> occurred:
+	* <%= error.message %>
+	
+Request:
+	<%= path %>
+	
+Params:
+	<% params.each do |k,v| %>
+	<%= k %> - <%= v.inspect %>
+	<% end %>
+
+Backtrace:
+<%= error.backtrace.join("\n")  %>

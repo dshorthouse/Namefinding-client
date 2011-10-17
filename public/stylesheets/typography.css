@@ -1,0 +1,72 @@
+/* @override 
+	http://localhost:4567/stylesheets/typography.css
+	http://ruby-webservices.local/stylesheets/typography.css
+*/
+
+@font-face {
+	font-family: 'LeagueGothicRegular';
+	src: url('/fonts/League_Gothic-webfont.eot');
+	src: local('☺'), url('/fonts/League_Gothic-webfont.woff') format('woff'), url('/fonts/League_Gothic-webfont.ttf') format('truetype'), url('/fonts/League_Gothic-webfont.svg#webfontOTINA1xY') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+/* -------------------------------------------------------------- 
+   Typography
+-------------------------------------------------------------- */
+
+/* This is where you set your desired font size. The line-heights 
+   and vertical margins are automatically calculated from this. 
+   The percentage is of 16px (0.75 * 16px = 12px). */
+body { font-size: 75%; 	line-height: 1.5em;
+	color: #5a5a5a}
+
+
+/* Default fonts and colors. */
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,input,textarea { 
+
+font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;} 
+
+
+/* Headings
+-------------------------------------------------------------- */
+
+h1 { font-weight: bold; font-family: 'LeagueGothicRegular', sans-serif; }
+
+h1 { font-size: 3em; line-height: 1; margin-bottom: 0.5em; }
+h2 { font-size: 2em; margin-bottom: 0.75em; }
+h3 { font-size: 1.5em; line-height: 1; margin-bottom: 1em; }
+h4 { font-size: 1.2em; line-height: 1.25; margin-bottom: 1.25em; }
+h5 { font-size: 1em; margin-bottom: 1.5em; }
+h6 { font-size: 1em; }
+
+
+/* Text elements
+-------------------------------------------------------------- */
+
+p { margin: 0 0 1.5em; }
+
+ul, ol { margin: 0 1.5em 1.5em 1.5em; }
+ul { list-style-type: circle; }
+ol { list-style-type: decimal; }
+
+dl { margin: 0 0 1.5em 0; }
+dl dt { font-weight: bold; }
+dl dd { margin-left: 1.5em; }
+
+abbr, acronym { border-bottom: none; font-size: smaller; text-transform: uppercase; /* Fake smallcaps */}
+address { margin-top: 1.5em; font-style: italic; }
+del { color: #000; }
+
+blockquote { margin: 1.5em; }
+strong { font-weight: bold; }
+em, dfn { font-style: italic; }
+dfn { font-weight: bold; }
+pre, code { margin: 1.5em 0; white-space: pre; }
+pre, code, tt { font: 1em monospace; line-height: 1.5; } 
+tt { display: block; margin: 1.5em 0; line-height: 1.5; }
+span.amp { /* For better-looking ampersands */
+  font-family: Baskerville, Palatino, "Book Antiqua", serif;
+  font-style: italic;
+}
