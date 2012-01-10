@@ -1,0 +1,9 @@
+.bundle
+tags
+*config.yml
+*.pid
+*.swp
+*.swo
+*~
+*.db
+*.log

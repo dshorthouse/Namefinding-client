@@ -68,6 +68,5 @@ describe 'NetiNetiClient' do
       end
     end
   end
-  
 
 end
